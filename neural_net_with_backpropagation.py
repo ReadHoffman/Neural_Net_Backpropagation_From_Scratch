@@ -8,7 +8,7 @@ Created on Wed Sep 23 16:42:37 2020
 import random
 import numpy as np
 import matplotlib.pyplot as plt
-
+ 
 random.seed(42)
 
 ##xor
