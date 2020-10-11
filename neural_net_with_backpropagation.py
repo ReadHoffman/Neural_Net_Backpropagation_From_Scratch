@@ -5,11 +5,15 @@ Created on Wed Sep 23 16:42:37 2020
 @author: Read
 """
 
+import pandas as pd
 import random
 import numpy as np
 import matplotlib.pyplot as plt
  
 random.seed(42)
+
+df = pd.read_csv('C:\\Users\\Read\\Documents\\R\\MM2020\\CBB_DATA_ON_SCHEDULE_v2.csv')
+
 
 ##xor
 training_dataset = [[[0,1],[1]], [ [0,0], [0]], [[1,0],[1]],[[1,1],[0]] ]
@@ -20,7 +24,7 @@ testing_dataset = training_dataset.copy()
 
 inputs,target = training_dataset[0]
 
-LEARNING_RATE=.05
+LEARNING_RATE=.1
 
 class Node:
     def __init__(self,layer_id,node_id,network_part):
@@ -270,7 +274,7 @@ class Network:
         
 net = Network([2,5,1])
 net.create_nodes()
-net.train(training_dataset,iterations=10000)
+net.train(training_dataset,iterations=5000)
 plt.plot(net.total_error_history)
 print(net.test(testing_dataset))
 
